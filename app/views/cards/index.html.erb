@@ -1,0 +1,39 @@
+<%
+    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
+    suits = ["clubs", "diamonds", "hearts", "spades"]
+
+    deck = []
+    for rank in ranks
+        for suit in suits
+            card = "#{rank}_of_#{suit}"
+            deck.push(card)
+        end
+    end
+
+    # shuffle the deck
+    shuffled_deck = deck.shuffle
+    hand = shuffled_deck[0,5]
+%>
+
+<%#= hand %>
+
+<%#= deck %>
+
+<!-- anyone sees this comment. This is an html code comment that can be seen when inspecting html -->
+
+<h1>Welcome to the ENTR-451 Casino</h1>
+
+<% for card in hand %>
+   <img src="/images/cards/<%= card %>.svg">
+<%end %>
+
+<h1>
+    <a href="/cards">Deal again
+
+</h1>
+
+<!--
+<p>2 of spades</p>
+<p>3 of clubs</p>
+<p>ace of spades</p>
+-->
